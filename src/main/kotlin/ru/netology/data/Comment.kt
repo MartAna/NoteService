@@ -6,13 +6,8 @@ data class Comment(
     val noteId: Int,
     val commentId: Int,
     val ownerId: Int,
-    val replyTo: Int,
-    val message: String,
-    val data: Date,
-    val remoteOrNot: Boolean
-) : Record(){
-
-    override fun toString(): String {
-        return "Комментарий \n$noteId \n$commentId \n$ownerId \n$message \n$data"
-    }
-}
+    val replyTo: Int = 0,
+    val message: String = "message",
+    val data: Date = Date(2022,8,1),
+    val remoteOrNot: Boolean = false
+) : Record()

@@ -40,6 +40,7 @@ class NoteService {
                         for (it in comments) {
                             if (id == it.noteId)
                                 comments.removeAt(comments.indexOf(it))
+                            return true
                         }
                         return true
                     }
@@ -94,7 +95,7 @@ class NoteService {
         return false
     }
 
-    fun get(ownerId: Int) : List<Note>? {
+    fun get(ownerId: Int): List<Note>? {
         for (item in notes) {
             if (ownerId == item.ownerId) {
                 val list = mutableListOf<Note>()
@@ -107,7 +108,7 @@ class NoteService {
 
     }
 
-    fun getById (noteId: Int) : Note? {
+    fun getById(noteId: Int): Note? {
         for (item in notes) {
             if (noteId == item.noteId) {
                 return item
@@ -116,7 +117,7 @@ class NoteService {
         return null
     }
 
-    fun getComment (noteId: Int) : List<Comment>?{
+    fun getComment(noteId: Int): List<Comment>? {
         for (item in comments) {
             if (noteId == item.noteId) {
                 val list = mutableListOf<Comment>()
@@ -127,7 +128,7 @@ class NoteService {
         return null
     }
 
-    fun restoreComment (id: Int) : Boolean {
+    fun restoreComment(id: Int): Boolean {
         for (item in comments) {
             if (id == item.commentId) {
                 val number = comments.indexOf(item)
