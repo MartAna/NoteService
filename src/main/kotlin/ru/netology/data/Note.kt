@@ -9,6 +9,7 @@ data class Note (
     val text: String = "text",
     val privacy: Int = 0,
     val commentPrivacy: Int = 0,
-    val data: Date = Date(2022,8,1)
+    val data: Date = Date(2022,8,1),
+    val remoteOrNot: Boolean = false
 ) : Record()
 
